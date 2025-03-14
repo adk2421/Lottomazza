@@ -12,7 +12,7 @@ const httpUtils = ({
      */
     httpMethod: async (mappingUrl, reqType, reqData) => {
         let resData = [];
-        axios.defaults.baseURL = 'http://www.dhlottery.co.kr';
+        axios.defaults.baseURL = 'https://www.dhlottery.co.kr';
     
         await axios({
                 method: reqType,
