@@ -17,7 +17,7 @@ const httpUtils = ({
         await axios({
                 method: reqType,
                 url: mappingUrl + (
-                    reqType === 'get'
+                    reqType !== '' && reqType === 'get'
                         ? '?' + qs.stringify(reqData)
                         : ''
                     ),
@@ -25,6 +25,8 @@ const httpUtils = ({
                 data: reqData,
             })
             .then(function (response) {
+                console.log(response);
+                console.log(response.data);
                 resData.data = response.data;
     
                 if (resData.data)

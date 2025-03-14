@@ -3,7 +3,11 @@ import httpUtils from "../utils/httpUtils";
 const GameResult = () => {
 
 	const getGameResult = () => {
-		console.log(httpUtils.httpMethod('/common.do?method=getLottoNumber&drwNo=1162', 'GET', ''));
+		const data = {
+			method: 'getLottoNumber',
+			drwNo: '1162',
+		};
+		console.log(httpUtils.httpMethod('/common.do?', 'get', data));
 	}
 
 	return (
