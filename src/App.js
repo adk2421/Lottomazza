@@ -1,21 +1,14 @@
 import './styles/App.css';
+import Layout from './layout/Layout';
+import { Stack } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Stack>
+        <Layout />
+      </Stack>
     </div>
   );
 }
