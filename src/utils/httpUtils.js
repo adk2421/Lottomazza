@@ -1,6 +1,7 @@
 import axios from 'axios';
 import qs from 'qs';
 
+// API 통신 유틸
 const httpUtils = ({
 
     /**
@@ -12,12 +13,13 @@ const httpUtils = ({
      */
     httpMethod: async (mappingUrl, reqType, reqData) => {
         let resData = [];
-        axios.defaults.baseURL = 'https://www.dhlottery.co.kr';
+        const REACT_APP_API_URL = process.env.REACT_APP_API_URL;
+        axios.defaults.baseURL = REACT_APP_API_URL;
     
         await axios({
                 method: reqType,
                 url: mappingUrl + (
-                    reqType !== '' && reqType === 'get'
+                    reqType !== '' && reqType === 'GET'
                         ? '?' + qs.stringify(reqData)
                         : ''
                     ),

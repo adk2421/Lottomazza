@@ -12,8 +12,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.8.3",
-    "http-proxy-middleware": "^3.0.3",
+    "axios": "^1.8.4",
     "install": "^0.13.0",
     "lottomazza": "file:",
     "npm": "^11.2.0",
@@ -57,6 +56,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/adk2421/Lottomazza/issues"
-  },
-  "proxy": "https://www.dhlottery.co.kr"
+  }
 }
