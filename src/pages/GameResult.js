@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { TextField, Button, Box } from "@mui/material";
-import lottoData from "../data/lotto.json";
-// import httpUtils from "../utils/httpUtils";
+import httpUtils from "../utils/httpUtils";
 
 /**
  * 회차별 당첨번호 조회
@@ -13,14 +12,20 @@ const GameResult = () => {
 	// 입력한 회차에 맞는 로또 당첨정보 가져오기
 	const getGameResult = () => {
 		const searchNum = document.getElementById('searchNum').value;
-		setLottoInfo(lottoData['game_' + searchNum]);
+		const data = {
+			drwNo: searchNum,
+		};
+
+		httpUtils.httpMethod('/getLottoGameResult', 'GET', data).then(res => {
+			setLottoInfo(res.data);
+		});
 	}
 
 	return (
 		<div>
 			<h2>회차별 당첨번호 조회</h2>
 			<div>
-				<TextField id="searchNum" size="small" label="회차번호" defaultValue="1162" />
+				<TextField type='number' id="searchNum" size="small" label="회차번호" defaultValue="1166" />
 				<Button variant="contained" onClick={getGameResult}>조회</Button>
 			</div>
 			<Box
