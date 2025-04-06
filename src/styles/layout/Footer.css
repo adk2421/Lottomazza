@@ -1,0 +1,11 @@
+footer {
+	padding: 20px 0;
+	background-color: #0A2233;
+	color: #eeeeee;
+}
+
+img.logo {
+	width: 100px;
+	height: auto;
+	margin-bottom: 20px;
+}
